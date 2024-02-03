@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/icon.ico"/>
+
+    <title>QuizMaker - </title>
+</head>
+<body>
+	<div class="absolute w-screen h-screen m-auto flex justify-center gap-10 items-center flex-col" id="home">
+		<h1 class="text-2xl font-bold">Welcome to "My Cancer Adventure" !</h1>
+		<p>You're going to be an affected patient. All you have to do is to be careful in order to cure your cancer!</p>
+		<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" onclick="askName()">
+            Start
+        </button>
+	</div>
+    <div class="flex flex-col items-center h-screen justify-center space-y-10 hidden" id="qcm">
+        <h1 class="text-2xl font-bold" id="questionTitle">Which of the following is an animal ?</h1>
+        <div class="flex flex-row flex-wrap items-center justify-center content-stretch space-x-10" id="ansContainer">
+            <div ansId='0' class="flex flex-col px-8 py-4 border-2 rounded-lg shadow transition-all duration-275 hover:scale-125 cursor-pointer answer active">
+                Dog
+            </div>
+            <div ansId='0' class="flex flex-col px-8 py-4 border-2 rounded-lg shadow transition-all duration-275 hover:scale-125 cursor-pointer answer active">
+                Dog
+            </div>
+            <div ansId='0' class="flex flex-col px-8 py-4 border-2 rounded-lg shadow transition-all duration-275 hover:scale-125 cursor-pointer answer active">
+                Dog
+            </div>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onclick="submit()">
+            Submit
+        </button>
+    </div>
+	<div class="flex flex-col items-center h-screen justify-center space-y-10 hidden" id="end">
+        <h1 class="text-2xl font-bold" id="questionTitle">You've got <span id="finalScore"></span> points!</h1>
+        <p id="message"></p>
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" onclick="window.location = window.location">
+            Reload to restart
+        </button>
+    </div>
+	<div class="border-4 border-blue-300 p-2 absolute left-0 bottom-0 w-1/4 hidden" id="patient">
+		<h3 class="text-lg font-bold underline">Your patient record:</h3>
+		<ul>
+			<li>Name: <span class="text-blue-500" id="name"></span></li>
+			<li>Age: <span class="text-blue-500" id="age"></span></li>
+			<li class="hidden" id="cancer">Your cancer: <span class="text-blue-500" id="cancerName"></span></li>
+            <li class="hidden" id="scoreLi">Score: <span class="text-blue-500" id="score"></span></span>
+        </ul>
+	</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
